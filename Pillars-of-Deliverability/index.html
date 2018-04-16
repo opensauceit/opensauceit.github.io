@@ -14,7 +14,7 @@
 <meta property="og:site_name" content="opensauce">
 <meta property="og:description" content="3 Pillars of Deliverability Infrastructure Reputation Authentication  If you did not know, 1 in 5 emails don’t get placed in the right mailbox, that’s 20% of your emails sent don’t ever make it to som">
 <meta property="og:locale" content="english">
-<meta property="og:updated_time" content="2018-04-16T16:30:25.000Z">
+<meta property="og:updated_time" content="2018-04-16T16:45:26.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Pillars of Deliverability">
 <meta name="twitter:description" content="3 Pillars of Deliverability Infrastructure Reputation Authentication  If you did not know, 1 in 5 emails don’t get placed in the right mailbox, that’s 20% of your emails sent don’t ever make it to som">
@@ -157,7 +157,7 @@
 <li>Include plain-text emails, for a whole bunch of reasons</li>
 </ul>
 <h2 id="Infrastructure"><a href="#Infrastructure" class="headerlink" title="Infrastructure"></a>Infrastructure</h2><p>Dedicated and warmed up IP addresses for new senders — otherwise you will be sharing the reputation belonging to the previous sender on that IP<br>Secure server infrastructure from malicious users who might use your platform to spam or do other funny business<br>ISP feedback loops — use them to know what’s going on when people hit report/spam emails (M3AAWG)- most people use ReturnPath’s service but there are some companies who use their own services (i.e. GMail)<br>Make sure you have your own abuse (postmaster@, abuse@) set up on your own mailservers<br>Collaborate with spam filters like Barracuda or IP2BAN, and be aware of 3rd party hosted filters like CloudMark, MessageLabs<br>Rate Limits</p>
-<h2 id="Authentication"><a href="#Authentication" class="headerlink" title="Authentication"></a>Authentication</h2><p>Just read my other article to secure your emails and fight Unsolicited Bulk Email (UBE)<br><a href="What Is Email Authenticity — Email Marketing secrets">https://medium.com/@orliesaurus/what-is-email-authenticity-email-marketing-secrets-8f54074d4590</a><br>This basically gives you an overview of:<br>How can you lessen the risk of your messages ending up in a spam folder using SPF, SenderID, DKIM, Domain Keys…</p>
+<h2 id="Authentication"><a href="#Authentication" class="headerlink" title="Authentication"></a>Authentication</h2><p>Just read my other article to secure your emails and fight Unsolicited Bulk Email (UBE)<br>(<a href="https://medium.com/@orliesaurus/what-is-email-authenticity-email-marketing-secrets-8f54074d4590)[What" target="_blank" rel="noopener">https://medium.com/@orliesaurus/what-is-email-authenticity-email-marketing-secrets-8f54074d4590)[What</a> Is Email Authenticity — Email Marketing secrets]<br>This basically gives you an overview of:<br>How can you lessen the risk of your messages ending up in a spam folder using SPF, SenderID, DKIM, Domain Keys…</p>
 <h2 id="Feedback-Loops-FBLs-AKA-know-when-things-go-wrong"><a href="#Feedback-Loops-FBLs-AKA-know-when-things-go-wrong" class="headerlink" title="Feedback Loops (FBLs)- AKA know when things go wrong"></a>Feedback Loops (FBLs)- AKA know when things go wrong</h2><p>Good things to know before getting your hands dirty into FBLs.</p>
 <ul>
 <li>You must own the IP/domain, or have admin rights, in order to register for a FBL</li>
@@ -165,7 +165,7 @@
 <li>The rDNS of an IP being entered needs to match the domain being used</li>
 <li>Most ISPs specify that a good reputation is needed to be accepted on their FBL</li>
 </ul>
-<p>Super good resource to keep in mind when <a href="getting started with FBLs">https://wordtothewise.com/isp-information/</a></p>
+<p>Super good resource to keep in mind when (<a href="https://wordtothewise.com/isp-information/)[getting" target="_blank" rel="noopener">https://wordtothewise.com/isp-information/)[getting</a> started with FBLs]</p>
 <p>Your good or bad reputation can be checked on:</p>
 <ul>
 <li>SenderScore.org</li>
@@ -175,9 +175,9 @@
 </ul>
 <p>Avoid being BlackListed at all costs, always check on:</p>
 <ul>
-<li><a href="http://spamhaus.org" target="_blank" rel="noopener">Spamhaus</a></li>
-<li><a href="http://cbl.abuseat.org/" target="_blank" rel="noopener">CBL</a></li>
-<li><a href="http://www.mail-abuse.com/" target="_blank" rel="noopener">Trend Micro MAPS</a></li>
+<li>(Spamhaus)[<a href="http://spamhaus.org]" target="_blank" rel="noopener">http://spamhaus.org]</a></li>
+<li>(CBL)[<a href="http://cbl.abuseat.org/]" target="_blank" rel="noopener">http://cbl.abuseat.org/]</a></li>
+<li>(Trend Micro MAPS)[<a href="http://www.mail-abuse.com/]" target="_blank" rel="noopener">http://www.mail-abuse.com/]</a></li>
 </ul>
 <h3 id="Staying-clear-from-these-lists-is-a-must"><a href="#Staying-clear-from-these-lists-is-a-must" class="headerlink" title="Staying clear from these lists is a must!"></a>Staying clear from these lists is a must!</h3><p>These help mostly combat spammers by letting you know when an email sent from one of the mail servers hosted by your service has done something naughty.</p>
 <p>Yourself or your users can be categorized as one of these three groups:</p>
