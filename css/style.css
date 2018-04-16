@@ -1440,3 +1440,6 @@ pre code {
 .highlight .line {
   height: 22px;
 }
+.highlight #writing > ul > li:nth-child(3) > span > a {
+  display: none;
+}
