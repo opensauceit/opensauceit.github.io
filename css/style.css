@@ -1440,6 +1440,3 @@ pre code {
 .highlight .line {
   height: 22px;
 }
-.highlight #writing > ul > li:nth-last-child(1) {
-  display: none !important;
-}
