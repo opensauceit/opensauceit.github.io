@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="I spend 3/4 of my life on Google Chrome DevTools. In the latest release of Google Chrome Dev tools someone had the great idea to push upstream an intrusive tooltip that pops up when you inspect HTML e">
+<meta name="keywords" content="google chrome dev tools,tips">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Disable detailed tooltips in Inspect Mode for Google Chrome Dev Tools">
+<meta property="og:url" content="http://opensauce.it/disable-detailed-tooltip-in-inspect-mode/index.html">
+<meta property="og:site_name" content="opensauce">
+<meta property="og:description" content="I spend 3/4 of my life on Google Chrome DevTools. In the latest release of Google Chrome Dev tools someone had the great idea to push upstream an intrusive tooltip that pops up when you inspect HTML e">
+<meta property="og:locale" content="english">
+<meta property="og:updated_time" content="2019-03-26T18:02:39.821Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Disable detailed tooltips in Inspect Mode for Google Chrome Dev Tools">
+<meta name="twitter:description" content="I spend 3/4 of my life on Google Chrome DevTools. In the latest release of Google Chrome Dev tools someone had the great idea to push upstream an intrusive tooltip that pops up when you inspect HTML e">
+    
+    
+        
+          
+              <link rel="shortcut icon" href="/images/logo.svg">
+          
+        
+        
+          
+            <link rel="icon" type="image/png" href="/images/logo.svg" sizes="192x192">
+          
+        
+        
+          
+            <link rel="apple-touch-icon" sizes="180x180" href="/images/logo.svg">
+          
+        
+    
+    <!-- title -->
+    <title>Disable detailed tooltips in Inspect Mode for Google Chrome Dev Tools</title>
+    <!-- styles -->
+    <link rel="stylesheet" href="/css/style.css">
+    <!-- rss -->
+    
+    
+</head>
+
+<body>
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#"><i class="fa fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fa fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fa fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/projects/">Projects</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/consulting/">Consulting</a></li>
+        
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        
+        <li><a class="icon" href="/are-robots-tidy/"><i class="fa fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" href="#"><i class="fa fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://opensauce.it/disable-detailed-tooltip-in-inspect-mode/"><i class="fa fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=http://opensauce.it/disable-detailed-tooltip-in-inspect-mode/&text=Disable detailed tooltips in Inspect Mode for Google Chrome Dev Tools"><i class="fa fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://opensauce.it/disable-detailed-tooltip-in-inspect-mode/&title=Disable detailed tooltips in Inspect Mode for Google Chrome Dev Tools"><i class="fa fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://opensauce.it/disable-detailed-tooltip-in-inspect-mode/&is_video=false&description=Disable detailed tooltips in Inspect Mode for Google Chrome Dev Tools"><i class="fa fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=Disable detailed tooltips in Inspect Mode for Google Chrome Dev Tools&body=Check out this article: http://opensauce.it/disable-detailed-tooltip-in-inspect-mode/"><i class="fa fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=http://opensauce.it/disable-detailed-tooltip-in-inspect-mode/&title=Disable detailed tooltips in Inspect Mode for Google Chrome Dev Tools"><i class="fa fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=http://opensauce.it/disable-detailed-tooltip-in-inspect-mode/&title=Disable detailed tooltips in Inspect Mode for Google Chrome Dev Tools"><i class="fa fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://opensauce.it/disable-detailed-tooltip-in-inspect-mode/&title=Disable detailed tooltips in Inspect Mode for Google Chrome Dev Tools"><i class="fa fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=http://opensauce.it/disable-detailed-tooltip-in-inspect-mode/&title=Disable detailed tooltips in Inspect Mode for Google Chrome Dev Tools"><i class="fa fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://opensauce.it/disable-detailed-tooltip-in-inspect-mode/&name=Disable detailed tooltips in Inspect Mode for Google Chrome Dev Tools&description="><i class="fa fa-tumblr " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    <div id="toc">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#How-to-prevent-this-detailed-tooltips-from-appearing"><span class="toc-number">1.</span> <span class="toc-text">How to prevent this detailed tooltips from appearing?</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Why-fix-it-if-it-isn’t-broken"><span class="toc-number">2.</span> <span class="toc-text">Why fix it if it isn’t broken?</span></a></li></ol>
+    </div>
+  </span>
+</div>
+
+    
+    <div class="content index width mx-auto px2 my4">
+        
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle" itemprop="name headline">
+        Disable detailed tooltips in Inspect Mode for Google Chrome Dev Tools
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span itemprop="name">opensauce</span>
+      </span>
+      
+    <div class="postdate">
+        <time datetime="2019-03-26T17:59:36.000Z" itemprop="datePublished">2019-03-26</time>
+    </div>
+
+
+      
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/google-chrome-dev-tools/">google chrome dev tools</a>, <a class="tag-link" href="/tags/tips/">tips</a>
+    </div>
+
+
+    </div>
+  </header>
+  
+
+  <div class="content" itemprop="articleBody">
+    <p>I spend 3/4 of my life on Google Chrome DevTools. In the latest release of Google Chrome Dev tools someone had the great idea to push upstream an intrusive tooltip that pops up when you inspect HTML elements on mouse hover.</p>
+<p>Google describes the change this way:</p>
+<blockquote>
+<p>When inspecting a node, DevTools now shows an expanded tooltip containing commonly important information like font size, font color, contrast ratio, and box model dimensions.</p>
+</blockquote>
+<p>I really don’t think fontsize as important information, in fact I find this “too much”. These simple CSS attributes are probably not the ones that I am worried about in my development journey of pixel perfect, lightweight and reactive web pages (<em>sarcasm</em>). In fact that’s probably the least important information I need when I dissect through html elements in the node tree.</p>
+<h2 id="How-to-prevent-this-detailed-tooltips-from-appearing"><a href="#How-to-prevent-this-detailed-tooltips-from-appearing" class="headerlink" title="How to prevent this detailed tooltips from appearing?"></a>How to prevent this detailed tooltips from appearing?</h2><p>There’s no way to disable the pop up from showing <strong>permanently</strong>, however I found out that simply holding your <code>CTRL</code> (or <code>CMD</code> or equivalent key) on you keyboard while moving your pointer over the web-page will disable the pop up from showing up.</p>
+<h2 id="Why-fix-it-if-it-isn’t-broken"><a href="#Why-fix-it-if-it-isn’t-broken" class="headerlink" title="Why fix it if it isn’t broken?"></a>Why fix it if it isn’t broken?</h2><p>All this information is repeated in Dev tools panels quickly below. Why the need for a tooltip that pops up? If you’re interested in scoping out the attributes of a certain element just look in the panes below. </p>
+<p>Is this the best way to disable the tooltip? Probably not. However this will have to do, for now.<br>I do find this addition to Dev Tools annoying, then again I am a developer and I like to complain. </p>
+
+  </div>
+</article>
+
+
+
+    </div>
+    
+      <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/projects/">Projects</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/consulting/">Consulting</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#How-to-prevent-this-detailed-tooltips-from-appearing"><span class="toc-number">1.</span> <span class="toc-text">How to prevent this detailed tooltips from appearing?</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Why-fix-it-if-it-isn’t-broken"><span class="toc-number">2.</span> <span class="toc-text">Why fix it if it isn’t broken?</span></a></li></ol>
+    </div>
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://opensauce.it/disable-detailed-tooltip-in-inspect-mode/"><i class="fa fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=http://opensauce.it/disable-detailed-tooltip-in-inspect-mode/&text=Disable detailed tooltips in Inspect Mode for Google Chrome Dev Tools"><i class="fa fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://opensauce.it/disable-detailed-tooltip-in-inspect-mode/&title=Disable detailed tooltips in Inspect Mode for Google Chrome Dev Tools"><i class="fa fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://opensauce.it/disable-detailed-tooltip-in-inspect-mode/&is_video=false&description=Disable detailed tooltips in Inspect Mode for Google Chrome Dev Tools"><i class="fa fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=Disable detailed tooltips in Inspect Mode for Google Chrome Dev Tools&body=Check out this article: http://opensauce.it/disable-detailed-tooltip-in-inspect-mode/"><i class="fa fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=http://opensauce.it/disable-detailed-tooltip-in-inspect-mode/&title=Disable detailed tooltips in Inspect Mode for Google Chrome Dev Tools"><i class="fa fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=http://opensauce.it/disable-detailed-tooltip-in-inspect-mode/&title=Disable detailed tooltips in Inspect Mode for Google Chrome Dev Tools"><i class="fa fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://opensauce.it/disable-detailed-tooltip-in-inspect-mode/&title=Disable detailed tooltips in Inspect Mode for Google Chrome Dev Tools"><i class="fa fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=http://opensauce.it/disable-detailed-tooltip-in-inspect-mode/&title=Disable detailed tooltips in Inspect Mode for Google Chrome Dev Tools"><i class="fa fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://opensauce.it/disable-detailed-tooltip-in-inspect-mode/&name=Disable detailed tooltips in Inspect Mode for Google Chrome Dev Tools&description="><i class="fa fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+      <ul>
+        <li id="toc"><a class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fa fa-list fa-lg" aria-hidden="true"></i> TOC</a></li>
+        <li id="share"><a class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fa fa-share-alt fa-lg" aria-hidden="true"></i> Share</a></li>
+        <li id="top" style="display:none"><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a></li>
+        <li id="menu"><a class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fa fa-bars fa-lg" aria-hidden="true"></i> Menu</a></li>
+      </ul>
+    </div>
+
+  </div>
+</div>
+
+    
+    <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy; 2019 @orliesaurus
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/projects/">Projects</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/consulting/">Consulting</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+</body>
+</html>
+<!-- styles -->
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+<link rel="stylesheet" href="/lib/meslo-LG/styles.css">
+<link rel="stylesheet" href="/lib/justified-gallery/justifiedGallery.min.css">
+
+<!-- jquery -->
+<script src="/lib/jquery/jquery.min.js"></script>
+<script src="/lib/justified-gallery/jquery.justifiedGallery.min.js"></script>
+<script src="/js/main.js"></script>
+
+
+
+
