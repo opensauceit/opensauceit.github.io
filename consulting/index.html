@@ -13,7 +13,7 @@
 <meta property="og:site_name" content="opensauce">
 <meta property="og:description" content="I am a full-stack software developer and have worked for 5+ startups across the globe, I am experienced in remote-working and managing small teams of  developers and marketers. I am an API expert that">
 <meta property="og:locale" content="english">
-<meta property="og:updated_time" content="2018-08-03T19:57:16.028Z">
+<meta property="og:updated_time" content="2019-06-18T13:30:18.083Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Book some consulting time with me">
 <meta name="twitter:description" content="I am a full-stack software developer and have worked for 5+ startups across the globe, I am experienced in remote-working and managing small teams of  developers and marketers. I am an API expert that">
@@ -114,8 +114,43 @@
 </ul>
 </li>
 </ul>
-<p>Book some time with me, we’ll use the money to get lunch (or a couple of coffees) together!<br>The only reason I charge for this is to keep away time wasters!<br><strong>Make sure the email address field isn’t blank or I will have to stalk you through LinkedIn!</strong></p>      
-<!-- <form action="" method="GET"><br>  <script src="https://checkout.stripe.com/checkout.js" class="stripe-button" data-key="pk_live_Rym1sgndBEKie1Q1VdlYOeoh" data-amount="5000" data-name="opensauce.it" data-description="Widget" data-image="https://stripe.com/img/documentation/checkout/marketplace.png" data-locale="auto" data-pane-label="Pay $50 Now" data-label="Pay Lunch Consulting Fee"><br>  </script><br></form>-->
+<p>Book some time with me, we’ll use the money to get lunch (or a couple of coffees) together!<br>The only reason I charge for this is to keep away time wasters!<br><strong>Make sure the email address field isn’t blank or I will have to stalk you through LinkedIn!</strong></p>
+<!-- Load Stripe.js on your website. -->
+<script src="https://js.stripe.com/v3"></script>
+
+<!-- Create a button that your customers click to complete their purchase. Customize the styling to suit your branding. -->
+<button style="background-color:#6772E5;color:#FFF;padding:8px 12px;border:0;border-radius:4px;font-size:1em" id="checkout-button-sku_FHFtz054aILjMK" role="link"><br>  Checkout<br></button>
+
+<div id="error-message"></div>
+
+<script>
+  var stripe = Stripe('pk_live_Rym1sgndBEKie1Q1VdlYOeoh');
+
+  var checkoutButton = document.getElementById('checkout-button-sku_FHFtz054aILjMK');
+  checkoutButton.addEventListener('click', function () {
+    // When the customer clicks on the button, redirect
+    // them to Checkout.
+    stripe.redirectToCheckout({
+      items: [{sku: 'sku_FHFtz054aILjMK', quantity: 1}],
+
+      // Do not rely on the redirect to the successUrl for fulfilling
+      // purchases, customers may not always reach the success_url after
+      // a successful payment.
+      // Instead use one of the strategies described in
+      // https://stripe.com/docs/payments/checkout/fulfillment
+      successUrl: window.location.protocol + '//opensauce.it/consulting',
+      cancelUrl: window.location.protocol + '//opensauce.it/consulting',
+    })
+    .then(function (result) {
+      if (result.error) {
+        // If `redirectToCheckout` fails due to a browser or network
+        // error, display the localized error message to your customer.
+        var displayError = document.getElementById('error-message');
+        displayError.textContent = result.error.message;
+      }
+    });
+  });
+</script>
 
 
 
