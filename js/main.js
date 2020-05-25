@@ -13,6 +13,15 @@ if (!!$.prototype.justifiedGallery) {
 
 $(document).ready(function() {
 
+
+
+  var scsc = document.createElement("script");
+  scsc.type = "text/javascript";
+  scsc.src = "https://cdn.splitbee.io/sb.js";
+  scsc.async = true
+
+  $("head").append(scsc);
+
   /**
    * Shows the responsive navigation menu on mobile.
    */
