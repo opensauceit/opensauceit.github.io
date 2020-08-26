@@ -13,7 +13,7 @@
 <meta property="og:site_name" content="opensauce">
 <meta property="og:description" content="I am a full-stack software developer and have worked for 5+ startups across the globe, I am experienced in remote-working and managing small teams of  developers and marketers. I am an API expert that">
 <meta property="og:locale" content="english">
-<meta property="og:updated_time" content="2020-08-26T01:58:53.563Z">
+<meta property="og:updated_time" content="2020-08-26T02:11:44.943Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Book some consulting time with me">
 <meta name="twitter:description" content="I am a full-stack software developer and have worked for 5+ startups across the globe, I am experienced in remote-working and managing small teams of  developers and marketers. I am an API expert that">
@@ -130,25 +130,7 @@
 
 <div id="error-message"></div>
 
-<p><script><br>  var stripe = Stripe(‘pk_live_Rym1sgndBEKie1Q1VdlYOeoh’);</p>
-<p>  var checkoutButton = document.getElementById(‘checkout-button-sku_FHFtz054aILjMK’);<br>  checkoutButton.addEventListener(‘click’, function () {<br>    // When the customer clicks on the button, redirect<br>    // them to Checkout.<br>    stripe.redirectToCheckout({<br>      items: [{sku: ‘sku_FHFtz054aILjMK’, quantity: 1}],</p>
-<pre><code>  // Do not rely on the redirect to the successUrl for fulfilling
-  // purchases, customers may not always reach the success_url after
-  // a successful payment.
-  // Instead use one of the strategies described in
-  // https://stripe.com/docs/payments/checkout/fulfillment
-  successUrl: window.location.protocol + &apos;//opensauce.it/consulting&apos;,
-  cancelUrl: window.location.protocol + &apos;//opensauce.it/consulting&apos;,
-})
-.then(function (result) {
-  if (result.error) {
-    // If `redirectToCheckout` fails due to a browser or network
-    // error, display the localized error message to your customer.
-    var displayError = document.getElementById(&apos;error-message&apos;);
-    displayError.textContent = result.error.message;
-  }
-});
-</code></pre><p>  });<br></script></p>
+<p><script><br>var stripe = Stripe(‘pk_live_Rym1sgndBEKie1Q1VdlYOeoh’);<br>var checkoutButton = document.getElementById(‘checkout-button-sku_FHFtz054aILjMK’);<br>checkoutButton.addEventListener(‘click’, function () {<br>stripe.redirectToCheckout({<br>items: [{sku: ‘sku_FHFtz054aILjMK’, quantity: 1}],<br>successUrl: window.location.protocol + ‘//opensauce.it/consulting’,<br>cancelUrl: window.location.protocol + ‘//opensauce.it/consulting’,<br>}).then(function (result) {<br>if (result.error) {<br>var displayError = document.getElementById(‘error-message’);<br>displayError.textContent = result.error.message;<br>}<br>});<br>});<br></script></p>
 <style>
   #checkout-button-sku_FHFtz054aILjMK:hover {
     cursor: pointer;
