@@ -13,7 +13,7 @@
 <meta property="og:site_name" content="opensauce">
 <meta property="og:description" content="I am a full-stack software developer and have worked for 5+ startups across the globe, I am experienced in remote-working and managing small teams of  developers and marketers. I am an API expert that">
 <meta property="og:locale" content="english">
-<meta property="og:updated_time" content="2019-06-18T13:39:12.119Z">
+<meta property="og:updated_time" content="2020-08-26T01:56:13.287Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Book some consulting time with me">
 <meta name="twitter:description" content="I am a full-stack software developer and have worked for 5+ startups across the globe, I am experienced in remote-working and managing small teams of  developers and marketers. I am an API expert that">
@@ -126,39 +126,34 @@
 <script src="https://js.stripe.com/v3"></script>
 
 <!-- Create a button that your customers click to complete their purchase. Customize the styling to suit your branding. -->
-<button style="background-color:#ff5722;color:#FFF;padding:8px 12px;border:0;border-radius:4px;font-size:1em" id="checkout-button-sku_FHFtz054aILjMK" role="link"><br>  Book a lunch<br></button>
+<button style="background-color:#ff5722;color:#FFF;padding:18px 22px;border:0;border-radius:4px;font-size:1em;" id="checkout-button-sku_FHFtz054aILjMK" role="link">Book a lunch</button>
 
 <div id="error-message"></div>
 
-<script>
-  var stripe = Stripe('pk_live_Rym1sgndBEKie1Q1VdlYOeoh');
-
-  var checkoutButton = document.getElementById('checkout-button-sku_FHFtz054aILjMK');
-  checkoutButton.addEventListener('click', function () {
-    // When the customer clicks on the button, redirect
-    // them to Checkout.
-    stripe.redirectToCheckout({
-      items: [{sku: 'sku_FHFtz054aILjMK', quantity: 1}],
-
-      // Do not rely on the redirect to the successUrl for fulfilling
-      // purchases, customers may not always reach the success_url after
-      // a successful payment.
-      // Instead use one of the strategies described in
-      // https://stripe.com/docs/payments/checkout/fulfillment
-      successUrl: window.location.protocol + '//opensauce.it/consulting',
-      cancelUrl: window.location.protocol + '//opensauce.it/consulting',
-    })
-    .then(function (result) {
-      if (result.error) {
-        // If `redirectToCheckout` fails due to a browser or network
-        // error, display the localized error message to your customer.
-        var displayError = document.getElementById('error-message');
-        displayError.textContent = result.error.message;
-      }
-    });
-  });
-</script>
-
+<p><script><br>  var stripe = Stripe(‘pk_live_Rym1sgndBEKie1Q1VdlYOeoh’);</p>
+<p>  var checkoutButton = document.getElementById(‘checkout-button-sku_FHFtz054aILjMK’);<br>  checkoutButton.addEventListener(‘click’, function () {<br>    // When the customer clicks on the button, redirect<br>    // them to Checkout.<br>    stripe.redirectToCheckout({<br>      items: [{sku: ‘sku_FHFtz054aILjMK’, quantity: 1}],</p>
+<pre><code>  // Do not rely on the redirect to the successUrl for fulfilling
+  // purchases, customers may not always reach the success_url after
+  // a successful payment.
+  // Instead use one of the strategies described in
+  // https://stripe.com/docs/payments/checkout/fulfillment
+  successUrl: window.location.protocol + &apos;//opensauce.it/consulting&apos;,
+  cancelUrl: window.location.protocol + &apos;//opensauce.it/consulting&apos;,
+})
+.then(function (result) {
+  if (result.error) {
+    // If `redirectToCheckout` fails due to a browser or network
+    // error, display the localized error message to your customer.
+    var displayError = document.getElementById(&apos;error-message&apos;);
+    displayError.textContent = result.error.message;
+  }
+});
+</code></pre><p>  });<br></script></p>
+<style>
+  #checkout-button-sku_FHFtz054aILjMK:hover {
+    cursor: pointer;
+  }
+</style>
 
 
   </div>
